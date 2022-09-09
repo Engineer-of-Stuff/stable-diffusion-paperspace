@@ -8,7 +8,7 @@ Don't post bug reports on the Kazakhstan rock collection forum. Create an issue 
 
 ### Getting Started
 
-[Docs/Paperspace Guide for Retards.md](Docs/Paperspace Guide for Retards.md)
+[Docs/Paperspace Guide for Retards.md](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/Docs/Paperspace%20Guide%20for%20Retards.md)
 
 
 
