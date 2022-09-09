@@ -2,6 +2,37 @@
 
 ### Getting Started on Paperspace for Retards <3
 
+**What is Paperspace?**
+
+Basically, a cloud compute service for AI development. You run your code on their hardware.
+
+
+
+
+**Why Paperspace?**
+
+Paperspace makes it easy to run resource-intensive, long-running AI calculations. Paperspace is convenient, free, and you probably don't have a computer good enough to run the AI. 
+
+You'll run your code on their powerful GPUs which is much faster and easier than locally on your computer.
+
+
+
+**Do I have to pay?**
+
+Only if you feel limited by their free tier. You should have everything you need to generate ~~porn~~ really neat images.
+
+
+
+**Why not Google Colab?**
+
+Google Colab is an alternative, but their free tier is more restrictive than Paperspace's and has less powerful hardware.
+
+
+
+## Let's do it!
+
+
+
 1. [Create an Account](https://console.paperspace.com/signup)
 2. Click this button and fill out the form that pops up
 
