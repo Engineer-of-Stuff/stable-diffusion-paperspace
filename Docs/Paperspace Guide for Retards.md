@@ -36,7 +36,11 @@ Google Colab is an alternative, but their free tier is more restrictive than Pap
 
 
 1. [Create an Account](https://console.paperspace.com/signup)
-2. Click this button and fill out the form that pops up
+
+In an effort to help the new people get started, here's a promo code to get $10 account credit. `KQLRH37` Use this link to quickly sign up:
+[https://console.paperspace.com/signup?R=KQLRH37](https://console.paperspace.com/signup?R=KQLRH37)
+
+3. Click this button and fill out the form that pops up
 
 ![create_project](Assets/create_project.png)
 
