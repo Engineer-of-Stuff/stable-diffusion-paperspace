@@ -2,6 +2,8 @@
 
 ### Getting Started on Paperspace for Retards <3
 
+![paperspace](Assets/paperspace.png)
+
 **What is Paperspace?**
 
 Basically, a cloud compute service for AI development. You run your code on their hardware.
