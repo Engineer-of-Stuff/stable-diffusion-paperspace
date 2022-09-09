@@ -1,3 +1,5 @@
+
+
 ### Getting Started on Paperspace for Retards <3
 
 1. [Create an Account](https://console.paperspace.com/signup)
@@ -9,11 +11,15 @@
 
 ![create_notebook](Assets/create_notebook.png)
 
-4. Download [StableDiffusionUI_Voldemort_paperspace.ipynb](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/StableDiffusionUI_Voldemort_paperspace.ipynb)
-5. Upload that file to your notebook
+4. Under "Runtime" select "Start from Stratch"
+
+![start_scratch.png](Assets/start_scratch.png)
+
+5. Download [StableDiffusionUI_Voldemort_paperspace.ipynb](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/StableDiffusionUI_Voldemort_paperspace.ipynb)
+6. Upload that file to your notebook
 
 ![upload](Assets/upload.png)
 
-6. Follow directions
+7. Follow directions
 
 ![final](Assets/final.png)
