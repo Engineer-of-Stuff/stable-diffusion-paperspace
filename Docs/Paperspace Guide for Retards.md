@@ -21,7 +21,7 @@ You'll run your code on their powerful GPUs which is much faster and easier than
 
 **Do I have to pay?**
 
-Only if you feel limited by their free tier. You should have everything you need to generate ~~porn~~ really neat images.
+Only if you feel limited by their free tier. You should have everything you need to generate ~~porn~~ really neat images. I'm pretty Paperspace is cheaper than Google Colab Pro.
 
 
 
