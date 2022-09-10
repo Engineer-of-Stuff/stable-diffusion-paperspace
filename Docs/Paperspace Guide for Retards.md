@@ -29,6 +29,10 @@ Only if you feel limited by their free tier. You should have everything you need
 
 Google Colab is an alternative, but their free tier is more restrictive than Paperspace's and has less powerful hardware.
 
+**But I want to run it on Google Colab!**
+
+Ok fine. [Here's the official notebook by Voldy himself.](https://colab.research.google.com/drive/1Iy-xW9t1-OQWhb0hNxueGij8phCyluOh)
+
 
 
 ## Let's do it!
