@@ -9,6 +9,8 @@ Don't post bug reports on the Kazakhstan rock collection forum. Create an issue 
 
 [Docs/Paperspace Guide for Retards.md](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/Docs/Paperspace%20Guide%20for%20Retards.md)
 
+[Docs/Using the Inpainter.md(https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/Docs/Using%20the%20Inpainter.md)
+
 In an effort to help the new people get started, here's a promo code to get $10 account credit. `KQLRH37` Use this link to quickly sign up:
 [https://console.paperspace.com/signup?R=KQLRH37](https://console.paperspace.com/signup?R=KQLRH37). If you've already created your account you can still redeem the code at the bottom of the Billing page.
 
