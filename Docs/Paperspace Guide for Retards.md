@@ -64,3 +64,11 @@ In an effort to help the new people get started, here's a promo code to get $10 
 7. Follow directions
 
 ![final](Assets/final.png)
+
+## I need more help :(
+
+Here's some other guides. Please don't shit up /sdg/ with tech support questions.
+
+[FINAL GUI RETARD GUIDE.pdf](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/Docs/FINAL%20GUI%20RETARD%20GUIDE.pdf)
+
+[VOLDEMORT'S GUI GUIDE FOR THE MENTALLY DEFICIENT](https://rentry.org/zfawb) <sub>[PDF backup](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/Docs/VOLDEMORT'S%20GUI%20GUIDE%20FOR%20THE%20MENTALLY%20DEFICIENT.pdf)</sub>
