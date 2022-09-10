@@ -31,7 +31,7 @@ Google Colab is an alternative, but their free tier is more restrictive than Pap
 
 **But I want to run it on Google Colab!**
 
-Ok fine. [Here's the official notebook by Voldy himself.](https://colab.research.google.com/drive/1Iy-xW9t1-OQWhb0hNxueGij8phCyluOh)
+Ok fine. [Here's the official colab notebook by Voldy himself.](https://colab.research.google.com/drive/1Iy-xW9t1-OQWhb0hNxueGij8phCyluOh)
 
 
 
