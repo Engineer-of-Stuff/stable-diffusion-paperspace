@@ -1,4 +1,6 @@
-#->`--Using the Inpainter--`<-#
+# Using the Inpainter
+
+[rentry.org](https://rentry.org/drfar)
 
 Are your generated images disappointing? Is the AI letting you down? Well fear not! There is a tool you can use to work with the AI to get the image you want.
 
