@@ -69,6 +69,8 @@ In an effort to help the new people get started, here's a promo code to get $10 
 
 Here's some other guides. Please don't shit up /sdg/ with tech support questions.
 
+Pro-tip: go lurk in /sdg/ on /g/ and view /sdg/ archives for tips, tricks, and suggestions.
+
 [FINAL GUI RETARD GUIDE](https://rentry.org/voldy) <sub>[pdf backup](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/Docs/FINAL%20GUI%20RETARD%20GUIDE.pdf)</sub>
 
 [VOLDEMORT'S GUI GUIDE FOR THE MENTALLY DEFICIENT](https://rentry.org/zfawb) <sub>[pdf backup](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/Docs/VOLDEMORT'S%20GUI%20GUIDE%20FOR%20THE%20MENTALLY%20DEFICIENT.pdf)</sub>
