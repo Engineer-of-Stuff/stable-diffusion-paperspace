@@ -107,6 +107,14 @@ Same prompt, minus the skirt part:`cute girl looking up at sky, hair blowing in 
 
 ![inpainting8](Assets/inpainting8.png)
 
-
+The front of the plane's hull is a little warped but that can be fixed with some more work.
 
 And there you have it! It's a very simple, repetitive process that allows you to work closely with the AI to create the exact image you've got in your head.
+
+
+
+## How to Outpaint
+
+Here's a tl;dr on outpainting.
+
+![outpainting](Assets/outpainting.png)
