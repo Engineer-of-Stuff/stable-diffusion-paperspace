@@ -118,3 +118,7 @@ And there you have it! It's a very simple, repetitive process that allows you to
 Here's a tl;dr on outpainting.
 
 ![outpainting](Assets/outpainting.png)
+
+
+
+[The images in this guide are hosted on Github](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace)
