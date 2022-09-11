@@ -2,6 +2,11 @@
 
 [rentry.org](https://rentry.org/drfar)
 
+
+
+[TOC]
+
+
 Are your generated images disappointing? Is the AI letting you down? Well fear not! There is a tool you can use to work with the AI to get the image you want.
 
 **What's inpainting?**
@@ -116,6 +121,12 @@ And there you have it! It's a very simple, repetitive process that allows you to
 ## How to Outpaint
 
 Here's a tl;dr on outpainting.
+
+
+
+Outpainting allows you to extend the original image and create large-scale images in any aspect ratio. Outpainting takes into account the image’s  existing visual elements (shadows, reflections, and textures) to maintain the context of the original image.
+
+
 
 ![outpainting](Assets/outpainting.png)
 
