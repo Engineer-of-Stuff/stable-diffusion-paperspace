@@ -1,4 +1,4 @@
-# Using the Inpainter
+# Inpainting & Outpainting
 
 [rentry.org](https://rentry.org/drfar)
 
@@ -137,6 +137,12 @@ Here's a tl;dr on outpainting.
 
 
 Outpainting allows you to extend the original image and create large-scale images in any aspect ratio. Outpainting takes into account the image’s  existing visual elements (shadows, reflections, and textures) to maintain the context of the original image.
+
+
+
+It's less involved than inpainting. Here's a few tips:
+
+- What you put in the prompt is important. Don't expect the AI to interpret what should be created.
 
 
 
