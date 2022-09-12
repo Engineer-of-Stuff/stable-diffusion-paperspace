@@ -118,6 +118,18 @@ And there you have it! It's a very simple, repetitive process that allows you to
 
 
 
+### Upload a mask
+
+Click the `Upload mask` button. The image dialog will be split into two sections, the top for your source image and the bottom for the mask.
+
+The mask is a black and white PNG file. White marks places to modify and black is places to leave the same. You can flip this in the `Masking mode` section.
+
+Here's an example of a mask.
+
+![mask1.png](Assets/mask1.png)
+
+
+
 ## How to Outpaint
 
 Here's a tl;dr on outpainting.
