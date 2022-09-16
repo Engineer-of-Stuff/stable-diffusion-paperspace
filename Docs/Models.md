@@ -1,4 +1,4 @@
-#->`-- Standard Diffusion Models --`<-#
+#->`Standard Diffusion Models`<-#
 
 [TOC]
 
