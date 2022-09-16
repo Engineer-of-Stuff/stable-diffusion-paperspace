@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    
+<title>Larger resolutions with Stable Diffusion</title>
+<link rel="canonical" href="https://rentry.co/sdupscale" />
+
+    
+<meta name="description" content="Problem
+Stable Diffusion 1.4 was trained on 512×512 images. That means generating pictures in any other dimensions is going to mess your result up. When straying too far away from 512×512 and 1:1 aspect ratio, you'll get twin heads on characters, long necks, broken composition, tiled repetition a...">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Problem
+Stable Diffusion 1.4 was trained on 512×512 images. That means generating pictures in any other dimensions is going to mess your result up. When straying too far away from 512×512 and 1:1 aspect ratio, you'll get twin heads on characters, long necks, broken composition, tiled repetition a..." />
+<meta name="twitter:title" content="Larger resolutions with Stable Diffusion" />
+<meta name="twitter:site" content="@rentry_co" />
+
+<meta property="og:url" content="https://rentry.co/sdupscale" />
+<meta property="og:description" content="Problem
+Stable Diffusion 1.4 was trained on 512×512 images. That means generating pictures in any other dimensions is going to mess your result up. When straying too far away from 512×512 and 1:1 aspect ratio, you'll get twin heads on characters, long necks, broken composition, tiled repetition a..." />
+<meta property="og:title" content="Larger resolutions with Stable Diffusion" />
+<meta property="og:type" content="article" />
+
+
+<meta name="twitter:image" content="https://i.imgur.com/vdkgfuM.jpg" />
+<meta property="og:image" content="https://i.imgur.com/vdkgfuM.jpg" />
+
+
+
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=1" />
+
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css?v=84">
+    <link rel="manifest" href="/static/manifest.json?v=8">
+    <script>document.documentElement.classList.toggle("dark-mode", (localStorage.getItem("dark-mode") === null && window.matchMedia("(prefers-color-scheme: dark)").matches || localStorage.getItem("dark-mode") == "true"));</script>
+    <script>const script = document.createElement("script"); const hn = window.location.hostname === 'rentry.org' && 'rentry.org' || 'rentry.co'; script.src = 'https://a.' + hn + '/js/plausible.js'; script.defer = true; script.setAttribute('data-domain', hn + ',rentry'); document.head.appendChild(script);</script>
+</head>
+
+<body class="m-0 p-0">
+
+    <div class="container container-smooth">
+        <div class="row no-gutters">
+            
+<div class="col-12">
+    <div class="row no-gutters">
+        <div class="col-12 long-words">
+            
+
+            <div class="entry-text my-2 px-2 px-sm-4" style="min-height: 15rem; padding-top:0.1px; padding-bottom:0.1px">
+                <article>
+                    <div><h1 id="larger-resolutions-with-stable-diffusion">Larger resolutions with Stable Diffusion<a class="headerlink" href="#larger-resolutions-with-stable-diffusion" title="Permanent link"> </a></h1>
+<h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link"> </a></h2>
+<p>Stable Diffusion 1.4 was trained on 512×512 images. That means generating pictures in any other dimensions is going to mess your result up. When straying too far away from 512×512 and 1:1 aspect ratio, you'll get twin heads on characters, long necks, broken composition, tiled repetition and plenty of unwanted results in general. Here's a comparison.</p>
+<div class="ntable-wrapper">
+<table class="ntable">
+<thead>
+<tr>
+<th style="text-align: center">512×512, <em>John Berkey Sci-Fi</em></th>
+<th style="text-align: center">1024×1024, <em>John Berkey Sci-Fi</em> (resized back to 512)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center"><img alt="" referrerpolicy="same-origin" src="https://i.imgur.com/vdkgfuM.jpg" title=""></td>
+<td style="text-align: center"><img alt="" referrerpolicy="same-origin" src="https://i.imgur.com/aqmdGBA.jpg" title=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="ntable-wrapper">
+<table class="ntable">
+<thead>
+<tr>
+<th style="text-align: center">512×512, <em>photo of a man in the park</em></th>
+<th style="text-align: center">320×896, <em>photo of a man in the park</em> (resized back to 512)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center"><img alt="" referrerpolicy="same-origin" src="https://i.imgur.com/2XUHUkc.jpg" title=""></td>
+<td style="text-align: center"><img alt="" referrerpolicy="same-origin" src="https://i.imgur.com/TVkFCWK.jpg" title=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Any picture with a clearly defined subject is going to end up like this. Some pictures like landscapes, backgrounds and other similar scenes will actually benefit from repetition, to an extent.</p>
+<p><img alt="" referrerpolicy="same-origin" src="https://i.imgur.com/6Guw71J.jpg" title=""></p>
+<p>However even those will get garbled once you take it too far.</p>
+<p>So, how do you make pictures with larger resolutions?</p>
+<h2 id="sd-upscale-gobig">SD Upscale / GoBIG<a class="headerlink" href="#sd-upscale-gobig" title="Permanent link"> </a></h2>
+<p>If you are using <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" rel="nofollow noopener">this</a> Web UI, you have a feature called SD upscale (on the img2img tab). It's probably available in other wrappers for Stable Diffusion as well, but I will focus on this one. It will upscale your picture 2x (512×512 will become 1024×1024), using SD itself to invent more details. It can be repeated to make images of larger resolutions. It doesn't take up more memory, just requires proportionally more time. It can yield arbitrarily detailed pictures from mere 512×512, and these would be not fake but "real" details. It can even fix some faces and hands as they tend to be drawn better at larger sizes.</p>
+<p>The algorithm works like this:</p>
+<ol>
+<li>Upscale your image 2x by normal means</li>
+<li>Divide the 2x image into a bunch of tiles, with some overlap</li>
+<li>Run img2img on every tile, with respect to your prompt and settings.</li>
+<li>Combine the tiles to even out the seam.</li>
+</ol>
+<p><img alt="" referrerpolicy="same-origin" src="https://i.imgur.com/CdadwyC.jpg" title=""></p>
+<p>The settings page for it looks like this:</p>
+<p><img alt="" referrerpolicy="same-origin" src="https://i.imgur.com/EyUvrHD.jpg" title=""></p>
+<h4 id="optimal-settings">Optimal settings<a class="headerlink" href="#optimal-settings" title="Permanent link"> </a></h4>
+<p>Tile size is best kept the same as original because at different dimensions img2img will generate a completely diffrent picture and your result is going to be different from the original. However, if you don't care about it, you can make tiles larger or smaller to fit the content better. Read the Limitations section below and think how tiles will be layed out in respect to the underlying content.</p>
+<p>Keep in mind that if you give the tiles too little overlap, the result might considerably differ in different tiles. If you give too much overlap, you'll waste performance and may get double seams in extreme cases.</p>
+<p>Prompt can either be the same, describing the entire image (but also see the Limitation section), or just your styling vectors or something average if your content is too diverse across the tiles, or something entirely different if you want to get creative with adding details.</p>
+<p>If you don't want the result deviating too much from the original, keep seed the same.</p>
+<p>The main setting is Denoising strength, it works the same as in img2img, as it just runs img2img on each tile. The higher denoising is, the closer the result to the prompt and CFG. The lower denoising, the closer the result to the input picture. So:</p>
+<ul>
+<li>more denoising -&gt; more details induced by prompt and settings, but prone to unexpected hallucinations, visible seams, difference between tiles</li>
+<li>less denoising -&gt; less details, but safer</li>
+</ul>
+<p>Usually, denoising &gt; 0.45 gives undesired effects. (depends on the picture, though)</p>
+<p>CFG scale works exactly like it does in img2img, again because SD upscale is just tiled img2img.</p>
+<p>If you want the picture to deviate as little as possible from the original (just add details), keep all settings except denoising the same, including the tile size (same as picture size), prompt, seed etc. If you still want to set the different tile size, try playing with the seed resize feature but I was unable to make it work reliably:</p>
+<ul>
+<li>tick Extra</li>
+<li>set seed the same as original</li>
+<li>set little W and H sliders to the size of the original</li>
+</ul>
+<h4 id="prescaler">Prescaler<a class="headerlink" href="#prescaler" title="Permanent link"> </a></h4>
+<p>The first step in the algorithm (prescaling) is crucial. Here's a comparison of two pre-scaling algorithms used in SD upscale process.</p>
+<div class="ntable-wrapper">
+<table class="ntable">
+<thead>
+<tr>
+<th style="text-align: center">Lanczos</th>
+<th style="text-align: center">ESRGAN Remacri</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center"><img alt="" referrerpolicy="same-origin" src="https://i.imgur.com/FSNf2kl.png" title=""></td>
+<td style="text-align: center"><img alt="" referrerpolicy="same-origin" src="https://i.imgur.com/aRCgl7G.png" title=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Why does this happen? Lanczos is purely algorithmic, ESRGAN Remacri is a neural upscaler which is tuned for crispness and detail preservation. While neither of them is even remotely close to SD upscale, remacri keeps more detail for SD upscale to latch on when hallucinating new details.</p>
+<p>Two custom finetuned models for ESRGAN were found to work particularly good with SD upscale: <a href="https://drive.google.com/file/d/14pUxWLlOnzjZKOCsNguyNHchU6_581fc" rel="nofollow noopener">remacri</a> (works better for backgrounds, also tends to amplify brush strokes somewhat), and <a href="https://drive.google.com/file/d/1v-t2Op85wkME2Gnutiutp1Mqb1nkSM8q" rel="nofollow noopener">lollypop</a> (works better for more or less realistic people). You can experiment with other specialized ESRGAN models listed in <a href="https://upscale.wiki/wiki/Model_Database" rel="nofollow noopener">Upscale Wiki</a>.</p>
+<p>Note: Real-ESRGAN is <strong>not</strong> ESRGAN. The naming is confusing, but Real-ESRGAN is a newer, different model which doesn't seem to have finetuned variants. Don't use it, it's better in theory but is shit for this particular purpose.</p>
+<p>For the AUTOMATIC1111's wrapper we are talking about, drop your ESRGAN models into the ESRGAN folder, they will be available in SD upscale then.</p>
+<h4 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link"> </a></h4>
+<p>SD upscale has a considerable limitation: the prompt is the same for all tiles, and you can't manually lay tiles out. The more tiles you need to cover the image, the worse the issue is. Think small tiles on larger resolutions.</p>
+<p><img alt="" referrerpolicy="same-origin" src="https://i.imgur.com/4HNAA1A.jpg" title=""></p>
+<p>See the problem? Each tile covers very different content yet they are described by a single prompt. This can lead to SD upscale suddenly dreaming in a face in the grass, or invent another detail unrelated to the particular part of the picture.</p>
+<p><img alt="" referrerpolicy="same-origin" src="https://i.imgur.com/DF2OrmV.jpg" title=""></p>
+<p>There are several workarounds for this:</p>
+<ul>
+<li>Use larger tiles, or just run the entire prescaled picture through img2img manually, as one piece, if you can fit it in your VRAM. Since img2img is guided by the underlying pre-scaled picture, larger tiles won't give repetition. You will inevitably deviate from your original picture as your tile size will be different from the original size, though. Another person wrote a separate guide for this: <a href="https://rentry.org/b7vcb">https://rentry.org/b7vcb</a></li>
+<li>Don't set denoise too high on such images. More denoise = more chances for unexpected hallucinations.</li>
+<li>Only use styling vectors in your prompt, no descriptions of the content. Or even no prompt at all. The downside is that details won't be that relevant or good, especially with subsequent upscaling.</li>
+<li>Use manual compositing in Krita or Photoshop. You can prescale anything, and then manually detail it with img2img with any layout, prompt and settings you want.</li>
+</ul></div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div class="row no-gutters">
+        <div class="col-12 px-0">
+            <div class="text-muted">
+                <div class="float-left text-left">
+                    <a role="button" class="btn btn-light float-left squared mr-2" href="/sdupscale/edit">Edit</a>
+                    <div class="dropdown d-inline-block position-relative">
+                        <button id="dropdownButton" class="btn btn-light squared mr-2 dropdown-toggle" type="button">Export</button>
+                        <div class="dropdown-content">
+                            <a role="button" class="btn btn-light squared" href="/sdupscale/raw">Raw</a>
+                            <a role="button" class="btn btn-light squared" href="/sdupscale/pdf">PDF</a>
+                            <a role="button" class="btn btn-light squared" href="/sdupscale/png">PNG</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="float-right text-right pr-2 pr-sm-0">
+                    Pub: 11 Sep 2022 17:49 <span class="d-none d-sm-inline">UTC</span><br>
+                    
+                    Edit: 13 Sep 2022 10:14 <span class="d-none d-sm-inline">UTC</span><br>
+                    
+                    Views: 1471<br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            
+            <div class="text-center w-100 mb-3">
+                <hr class="my-2 basement-hr">
+                <a class="mr-1" href="/">new</a>&middot;<a class="mx-1" href="/what">what</a>&middot;<a class="mx-1" href="/how">how</a>&middot;<a class="ml-1" href="/langs">langs</a>
+<div class="position-relative"><span style="right: 0; bottom: -9px; background:transparent!important" class="position-absolute btn squared mr-2 mr-sm-0" id="darkModeBtn" title="Dark/light mode"></span></div>
+
+            </div>
+            
+            
+
+
+        </div>
+    </div>
+
+    <script src="/static/js/jquery.min.js?v=20"></script>
+    <script src="/static/js/bootstrap.min.js?v=20"></script>
+    
+</body>
+
+</html>
