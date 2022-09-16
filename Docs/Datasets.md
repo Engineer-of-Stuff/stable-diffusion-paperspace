@@ -52,7 +52,7 @@ magnet:?xt=urn:btih:F45CECF4E9DE86DA83A78DD2CCCD7F27D5557A52&tr=udp://nyquist.lo
 Very slow
 
 ```bash
-https://thisanimedoesnotexist.ai/downloads/wd-v1-2-full-ema.ckpt -O wd-v1-2-full-ema.ckpt
+https://thisanimedoesnotexist.ai/downloads/wd-v1-2-full-ema.ckpt
 ```
 
 
