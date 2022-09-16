@@ -1,8 +1,6 @@
+# `Getting Started on Paperspace for Retards <3`
 
-
-### Getting Started on Paperspace for Retards <3
-
-![paperspace](Assets/paperspace.png)
+![paperspace](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/paperspace.png)
 
 **What is Paperspace?**
 
@@ -41,29 +39,26 @@ Ok fine. [Here's the official colab notebook by Voldy himself.](https://colab.re
 
 1. [Create an Account](https://console.paperspace.com/signup)
 
-In an effort to help the new people get started, here's a promo code to get $10 account credit. `KQLRH37` Use this link to quickly sign up:
-[https://console.paperspace.com/signup?R=KQLRH37](https://console.paperspace.com/signup?R=KQLRH37)
-
 3. Click this button and fill out the form that pops up
 
-![create_project](Assets/create_project.png)
+![create_project](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/create_project.png)
 
 3. Click this button to create a notebook
 
-![create_notebook](Assets/create_notebook.png)
+![create_notebook](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/create_notebook.png)
 
 4. Under "Runtime" select "Start from Stratch"
 
-![start_scratch.png](Assets/start_scratch.png)
+![start_scratch.png](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/start_scratch.png)
 
 5. Download [StableDiffusionUI_Voldemort_paperspace.ipynb](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/StableDiffusionUI_Voldemort_paperspace.ipynb)
 6. Upload that file to your notebook
 
-![upload](Assets/upload.png)
+![upload](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/upload.png)
 
 7. Follow directions
 
-![final](Assets/final.png)
+![final](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/final.png)
 
 ## I need more help :(
 
@@ -71,6 +66,12 @@ Here's some other guides. Please don't shit up /sdg/ with tech support questions
 
 Pro-tip: go lurk in /sdg/ on /g/ and view /sdg/ archives for tips, tricks, and suggestions.
 
-[FINAL GUI RETARD GUIDE](https://rentry.org/voldy) <sub>[pdf backup](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/Docs/FINAL%20GUI%20RETARD%20GUIDE.pdf)</sub>
+- [VOLDEMORT'S GUI GUIDE FOR THE MENTALLY DEFICIENT](https://rentry.org/zfawb)
+- [FINAL GUI RETARD GUIDE](https://rentry.org/voldy)
+- [Using the WebUI](https://rentry.org/voldy)
+- [Using the Inpainter](https://rentry.org/drfar)
+- [Textual Inversion](https://rentry.org/aikgx)
+- [Crowd-Sourced Prompts](https://lexica.art/)
+- [Artist Name Prompts](https://sgreens.notion.site/sgreens/4ca6f4e229e24da6845b6d49e6b08ae7?v=fdf861d1c65d456e98904fe3f3670bd3)
 
-[VOLDEMORT'S GUI GUIDE FOR THE MENTALLY DEFICIENT](https://rentry.org/zfawb) <sub>[pdf backup](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/Docs/VOLDEMORT'S%20GUI%20GUIDE%20FOR%20THE%20MENTALLY%20DEFICIENT.pdf)</sub>
+[Images hosted on Github](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace)
