@@ -1,8 +1,8 @@
-#->`--Standard Diffusion Datasets--`<-#
+#->`-- Standard Diffusion Datasets --`<-#
 
 [TOC]
 
-### Quick & Easy Torrent Downloading
+## Quick & Easy Torrent Downloading
 
 ```bash
 apt update
@@ -10,7 +10,7 @@ apt install -y aria2
 aria2c "<magnet URL here>"
 ```
 
-### Standard Model
+## Standard Model
 
 **Torrent**
 
@@ -35,7 +35,7 @@ wget --header="'Authorization: Bearer {user_token}'" https://huggingface.co/Comp
 
 
 
-### Waifu Diffusion
+## Waifu Diffusion
 
 
 
@@ -59,19 +59,19 @@ https://thisanimedoesnotexist.ai/downloads/wd-v1-2-full-ema.ckpt -O wd-v1-2-full
 
 **Half-Size Model**
 
-Smaller filesize, slightly different output. If you're on free tier try this first, it's 3.5GB. 
+Smaller filesize, minor shift of output vs ema model. If you're on free tier try this first, it's 3.5GB. 
 
 ```bash
-magnet:?xt=urn:btih:153590FD7E93EE11D8DB951451056C362E3A9150&dn=wd-v1-2-full-ema-pruned.ckpt&tr=udp://glotorrents.pw:6969/announce&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://torrent.gresille.org:80/announce&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.coppersurfer.tk:6969&tr=udp://tracker.leechers-paradise.org:6969&tr=udp://p4p.arenabg.ch:1337&tr=udp://tracker.internetwarriors.net:1337&tr=wss://tracker.openwebtorrent.com
+magnet:?xt=urn:btih:153590FD7E93EE11D8DB951451056C362E3A9150&dn=wd-v1-2-full-ema-pruned.ckpt&tr=udp://tracker.opentrackr.org:1337
 ```
 
-### WD v1.2 and SD v1.4 Merged
+## WD v1.2 and SD v1.4 Merged
 ```bash
 magnet:?xt=urn:btih:UFIV4BI4MGWFLZSKPFQ5VFLNYL24ADUQ&dn=wd1-2_sd1-4_merged.ckpt&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce
 ```
 
 
-### trinart_stable_diffusion_v2
+## trinart_stable_diffusion_v2
 
 Another anime finetune.
 
@@ -92,5 +92,14 @@ https://huggingface.co/naclbit/trinart_stable_diffusion_v2/resolve/main/trinart2
 ```bash
 https://huggingface.co/naclbit/trinart_stable_diffusion_v2/resolve/main/trinart2_step60000.ckpt -O trinart2_step60000.ckpt
 ```
+
+## Danbooru potato epoch0
+
+A lewd danbooru model that outputs ehh results cause it needs more training.
+
+```bash
+magnet:?xt=urn:btih:f6976fbe3b9f93469bb62eb0c4950643b09f1f83&dn=Lewd-diffusion-pruned.ckpt&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=http%3a%2f%2ftracker.nucozer-tracker.ml%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.moeking.me%3a6969%2fannounce&tr=http%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2ftracker.dler.org%3a6969%2fannounce&tr=http%3a%2f%2ftracker1.bt.moack.co.kr%3a80%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2810%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2fbt.oiyo.tk%3a6969%2fannounce&tr=udp%3a%2f%2fopen.demonii.com%3a1337%2fannounce&tr=https%3a%2f%2ftracker.lilithraws.org%3a443%2fannounce&tr=http%3a%2f%2ftracker3.ctix.cn%3a8080%2fannounce&tr=udp%3a%2f%2fchouchou.top%3a8080%2fannounce&tr=https%3a%2f%2fopentracker.i2p.rocks%3a443%2fannounce&tr=https%3a%2f%2ftracker.nanoha.org%3a443%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=https%3a%2f%2ftracker1.520.jp%3a443%2fannounce
+```
+
 
 [Github mirror](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/Docs/Datasets.md)
