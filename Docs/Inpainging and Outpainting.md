@@ -1,13 +1,12 @@
-# Inpainting & Outpainting
-
-[rentry.org](https://rentry.org/drfar)
-
-
+#->`-- Inpainging & Outpainting --`<-#
 
 [TOC]
 
+Are your generated images disappointing? Is the AI letting you down? Well fear not! There are tools you can use to work with the AI to get the image you want.
 
-Are your generated images disappointing? Is the AI letting you down? Well fear not! There is a tool you can use to work with the AI to get the image you want.
+This guide uses negative prompts which only the [AUTOMATIC1111/Voldemort](https://github.com/AUTOMATIC1111/stable-diffusion-webui) repo supports.
+
+## Inpainting
 
 **What's inpainting?**
 Inpainting is a way to "fill in" parts of an image. In the context of stable diffusion that means making the AI regenerate part of the image.
@@ -22,7 +21,7 @@ It has two primary uses:
 
 
 
-## Let's do it!
+### Let's do it!
 
 **Prompt**
 We're going to need a special prompt for inpainting, one that focuses on the elements of the image that you want to change. I have a few prompts I copy&paste for certain parts of the image.
@@ -55,22 +54,22 @@ Below the prompt box, click the second radio button: `Inpaint a part of image`
 
 
 
-<br><br><br>
-
 
 I'll walk you through the process of how to do this. I'm going to use this image generated using the waifu-diffusion model.
 
-![inpainting1](Assets/inpainting1.png)
+![inpainting1](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/inpainting1.png)
 
 It's a complex scene with a few issues. Let's start by adding landing gear. I'm going to open the image in my external photo editor (I use GIMP) and sketch out the landing gear and then upload it to the WebUI and mask it.
 
-![inpainting2](Assets/inpainting2.png)
+![inpainting2](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/inpainting2.png)
 
 On the left is the landing gear I have drawn. On the right is the masked image, with the white being the mask I have drawn on using the WebUI's masking tool.
 
 As you can see, my drawing is really poor. But it doesn't have to be a quality drawing, it just has to give the AI an idea of what you want. Make sure the perspective and rough colors are correct. I also was very generous with the masking to allow it to generate shadows. My prompt will be "landing gear, shadows" and I'm going to turn up the denoising strength to give the AI some freedom to do what it wants. Next I generated a batch of five images. The results weren't very good because the AI was just mimicking what I had drawn. I increased the denoising strength to 0.65 and ran it again.
 
-![inpainting3](Assets/inpainting3.png)
+**Pro-Tip:** if it generates something you like set it to that seed and adjust the prompt.
+
+![inpainting3](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/inpainting3.png)
 
 Hey, that's pretty good! It didn't add any shadows but I can try to fix that by masking where they should be and running it with the prompt "shadows".
 
@@ -84,15 +83,15 @@ My negative prompt will be `deformed, blurry, bad anatomy, disfigured, poorly dr
 
 **Input:**
 
-![inpainting7](Assets/inpainting7.png)
+![inpainting7](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/inpainting7.png)
 
 **Output:**
 
-![grid](Assets/inpaintingrid1.png)
+![grid](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/inpaintingrid1.png)
 
 There certainly is a lot of shared energy between the skirt and hair. This one is my favorite.
 
-![inpainting5](Assets/inpainting5.png)
+![inpainting5](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/inpainting5.png)
 
 The skirt was originally a little transparent by the backwards `C` so I ran it through again with `transparent` in the negatives. The AI understood what I meant and fixed it for me.
 
@@ -102,21 +101,19 @@ Same prompt, minus the skirt part:`cute girl looking up at sky, hair blowing in 
 
 **Input:**
 
-![inpainting6](Assets/inpainting6.png)
+![inpainting6](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/inpainting6.png)
 
 **Output:**
 
-![inpaintingrid2](Assets/inpaintingrid2.png)
+![inpaintingrid2](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/inpaintingrid2.png)
 
 **I choose this as my final image:**
 
-![inpainting8](Assets/inpainting8.png)
+![inpainting8](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/inpainting8.png)
 
-The front of the plane's hull is a little warped but that can be fixed with some more work.
+
 
 And there you have it! It's a very simple, repetitive process that allows you to work closely with the AI to create the exact image you've got in your head.
-
-
 
 ### Upload a mask
 
@@ -126,28 +123,20 @@ The mask is a black and white PNG file. White marks places to modify and black i
 
 Here's an example of a mask.
 
-![mask1.png](Assets/mask1.png)
+![mask1.png](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/Docs/Assets/mask1.png)
 
+## Outpainting
 
-
-## How to Outpaint
-
-Here's a tl;dr on outpainting.
-
-
-
+** What is outpainting?**
 Outpainting allows you to extend the original image and create large-scale images in any aspect ratio. Outpainting takes into account the image’s  existing visual elements (shadows, reflections, and textures) to maintain the context of the original image.
 
+I never got outpainting to work right. If you're trying to extend your image I'd recommend inpainting creatively like this instead:
 
+1. Extend your canvas in an image editor.
+2. Draw what should be there.
+3. Run img2img over new area with overlap.
+4. Manually combine new and old area to hide the transition.
 
-It's less involved than inpainting. Here's a few tips:
-
-- What you put in the prompt is important. Don't expect the AI to interpret what should be created.
-
-
-
-![outpainting](Assets/outpainting.png)
-
-
+If you're getting tired of switching between GIMP and the WebUI, try Krita with an inpainting plugin (but doesn't support negative prompts). [You'll need this.](https://www.flyingdog.de/sd/en/)
 
 [The images in this guide are hosted on Github](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace)
