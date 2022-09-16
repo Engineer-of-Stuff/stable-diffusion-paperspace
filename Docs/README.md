@@ -2,7 +2,7 @@
 
 ### External Resources
 
-Copies in `stable-diffusion-paperspace/Docs/Mirrored`. 
+Copies in `stable-diffusion-paperspace/Docs/Archives`. 
 
 - https://rentry.org/voldy
 - https://rentry.org/drfar
