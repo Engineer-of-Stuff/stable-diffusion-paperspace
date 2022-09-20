@@ -12,3 +12,4 @@ wget "https://rentry.org/ayymd-stable-diffustion-v1_4-guide/pdf" -O "AyyMD Stabl
 wget "https://rentry.org/sdamd/pdf" -O "Stable Diffusion AMD.pdf"
 wget "https://rentry.org/yrpvv/pdf" -O "Standard Diffusion Models.pdf"
 wget "https://rentry.org/sdupscale" -O "Larger resolutions with Stable Diffusion.pdf"
+wget "https://rentry.org/male-to-anime-girl" -O "How to Turn Yourself Into a Cute Anime Girl.pdf"
