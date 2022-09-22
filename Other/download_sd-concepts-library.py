@@ -2,7 +2,7 @@
 # https://huggingface.co/sd-concepts-library
 # Make sure to add your username and password below.
 
-hf_username ''
+hf_username = ''
 hf_password = ''
 
 # Install/Setup:
