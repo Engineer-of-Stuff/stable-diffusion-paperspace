@@ -14,7 +14,7 @@ from huggingface_hub import HfApi
 import os
 
 api = HfApi()
-models_list = api.list_models(author="sd-concepts-library", sort="likes", direction=-1)
+models_list = api.list_models(author="sd-concepts-library")
 print('Downloading', len(models_list), 'models...')
 
 i = 1
@@ -25,3 +25,6 @@ for model_info in models_list:
     os.system(f'rm -rf repositories/{model_name}/.git*') # delete all git stuff in the repository
     os.system(f'mv repositories/{model_name}/learned_embeds.bin {model_name}.pt') # move the bin file out of the repository and rename it to a .pt file
     i = i + 1
+
+# Pro-tip: use this command to compress the files with 7zip max compression.
+# 7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=32m -ms=on sd-concepts-library_complete.7z sd-concepts-library/
