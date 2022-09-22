@@ -21,7 +21,7 @@ i = 1
 for model_info in models_list:
     print(f'\nCloning {model_info.modelId} | {i}/{len(models_list)}')
     model_name = model_info.modelId.replace('sd-concepts-library/', '')
-    os.system(f'git clone --depth=1 https://{hf_username}:{hf_password}@huggingface.co/{model_info.modelId} repositories/{model_name}')
-    os.system(f'rm -rf repositories/{model_name}/.git*')
-    os.system(f'mv repositories/{model_name}/learned_embeds.bin {model_name}.pt')
+    os.system(f'git clone --depth=1 https://{hf_username}:{hf_password}@huggingface.co/{model_info.modelId} repositories/{model_name}') # clone with no git history
+    os.system(f'rm -rf repositories/{model_name}/.git*') # delete all git stuff in the repository
+    os.system(f'mv repositories/{model_name}/learned_embeds.bin {model_name}.pt') # move the bin file out of the repository and rename it to a .pt file
     i = i + 1
