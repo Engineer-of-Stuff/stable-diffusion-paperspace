@@ -26,17 +26,13 @@ def getsizes(uri):
     file.close()
     return (size, None)
 
-
-# Get list of model directories
-# working_dir = os.getcwd()
-# root_dir_list = []
-# for x in os.listdir(working_dir):
-#     if os.path.isdir(x):
-#         root_dir_list.append(x)
-
 # Get list of models under the sd-concepts-library organization
 api = HfApi()
-root_dir_list = api.list_models(author="sd-concepts-library").sort()
+models_list = []
+for model in api.list_models(author="sd-concepts-library"):
+    models_list.append(model.modelId.replace('sd-concepts-library/', ''))
+models_list.sort()
+print(models_list)
 
 html_struct = """<!DOCTYPE html>
 <html lang="en">
@@ -86,8 +82,8 @@ html_struct = """<!DOCTYPE html>
 
 # Move the model out
 i = 1
-for model_name in root_dir_list:
-    print(f'{i}/{len(root_dir_list)} -> {model_name}')
+for model_name in models_list:
+    print(f'{i}/{len(models_list)} -> {model_name}')
     # if os.path.exists(f'{model_name}/learned_embeds.bin'):  # double check the file exists since sometimes it hasn't been uploaded yet
     #     shutil.move(f'{model_name}/learned_embeds.bin', f'{model_name}/{model_name}.pt')
     #     pass
