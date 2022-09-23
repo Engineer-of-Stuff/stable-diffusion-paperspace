@@ -1,0 +1,153 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Python application
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run Python Script
+      uses: jannekem/run-python-script-action@v1.3
+      with:
+        script: |
+          import os
+          import shutil
+          from urllib import request as ulreq
+
+          # import markdownify
+          import requests
+          from PIL import ImageFile
+
+
+          def getsizes(uri):
+              # https://stackoverflow.com/a/37709319
+              # get file size *and* image size (None if not known)
+              file = ulreq.urlopen(uri)
+              size = file.headers.get("content-length")
+              if size:
+                  size = int(size)
+              p = ImageFile.Parser()
+              while True:
+                  data = file.read(1024)
+                  if not data:
+                      break
+                  p.feed(data)
+                  if p.image:
+                      return size, p.image.size
+                      break
+              file.close()
+              return (size, None)
+
+
+          # Get list of model directories
+          working_dir = os.getcwd()
+          root_dir_list = []
+          for x in os.listdir(working_dir):
+              if os.path.isdir(x):
+                  root_dir_list.append(x)
+
+          html_struct = f"""<!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <title>Stable Diffusion Texual Inversion Models</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+          </head>
+          <body>
+          <style>
+            .img-wrapper {
+              display: flex;
+              margin-top: 40px;
+            }
+
+            .img1,
+            .img2,
+            .img3 {}
+
+            .thumbnail {
+              height: 185px;
+            }
+
+            .model-link {}
+
+            .model-title {
+              margin-top: 100px;
+            }
+
+            .model-link-wrapper {}
+          </style>
+          <div class="container" style="margin-bottom: 180px;">
+           <div class="jumbotron text-center" style="margin: 45px;"><h1>Stable Diffusion Texual Inversion Models</h1></div>
+           <center>Compiled {datetime.datetime.now().strftime('%B %d, %Y')}</center>
+
+          <p>
+            Generated from <a href="https://huggingface.co/sd-concepts-library">huggingface.co/sd-concepts-library</a>
+          </p>
+
+          <p>
+            Downloaded models are straight from the HuggingFace repositories and are named learned_embeds.bin. Rename to model_name.pt
+          </p>
+
+          <p>
+          The HuggingFace repository is changed regularly so this page might not be current.
+          </p>
+
+
+          <br><hr>
+          """
+
+          # Move the model out
+          i = 1
+          for model_name in root_dir_list:
+              print(f'{i}/{len(root_dir_list)} -> {model_name}')
+              # if os.path.exists(f'{model_name}/learned_embeds.bin'):  # double check the file exists since sometimes it hasn't been uploaded yet
+              #     shutil.move(f'{model_name}/learned_embeds.bin', f'{model_name}/{model_name}.pt')
+              #     pass
+              # else:
+              #     continue
+
+              # Images can be in a few different formats, figure out which one it's in
+              img_type = None
+              img_width = None
+              for type in ['jpeg', 'png', 'jpg']:
+                  r = requests.head(f'https://huggingface.co/sd-concepts-library/{model_name}/resolve/main/concept_images/0.{type}', allow_redirects=True)
+                  if r.status_code == 200:
+                      img_type = type
+                      img_width = getsizes(f'https://huggingface.co/sd-concepts-library/{model_name}/resolve/main/concept_images/0.{type}')[1][0]
+                      break
+
+              html_struct = html_struct + f"""<h3 class="model-title">{model_name}</h3>
+              <p><a class="model-link" href="https://huggingface.co/sd-concepts-library/{model_name}/resolve/main/learned_embeds.bin">Download {model_name}</a></p>
+              <p><a class="model-link" href="https://huggingface.co/sd-concepts-library/{model_name}/">View Repository</a></p>
+              <div class="img-wrapper">
+                <div class="img1" style="width:{img_width}px;">
+                  <img class="thumbnail" src="https://huggingface.co/sd-concepts-library/{model_name}/resolve/main/concept_images/0.{img_type}">
+                </div>
+                <div class="img2" style="width:{img_width}px;">
+                  <img class="thumbnail" src="https://huggingface.co/sd-concepts-library/{model_name}/resolve/main/concept_images/1.{img_type}">
+                </div>
+                <div class="img3" style="width:{img_width}px;">
+                  <img class="thumbnail" src="https://huggingface.co/sd-concepts-library/{model_name}/resolve/main/concept_images/2.{img_type}">
+                </div>
+              </div>"""
+              i = i + 1
+
+          html_struct = html_struct + '</div></body></html>'
+
+          f = open('sd-concepts-library.html', 'w')
+          f.write(html_struct)
+          f.close()
