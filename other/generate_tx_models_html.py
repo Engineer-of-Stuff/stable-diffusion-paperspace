@@ -1,5 +1,8 @@
+import argparse
+import datetime
 import os
 import shutil
+import sys
 from urllib import request as ulreq
 
 import requests
@@ -26,13 +29,20 @@ def getsizes(uri):
     file.close()
     return (size, None)
 
+
+parser = argparse.ArgumentParser()
+parser.add_argument('out_file', nargs='?', help='file to save to')
+args = parser.parse_args()
+
+print('Will save to file:', args.out_file)
+
 # Get list of models under the sd-concepts-library organization
+print('Getting list of models...')
 api = HfApi()
 models_list = []
 for model in api.list_models(author="sd-concepts-library"):
     models_list.append(model.modelId.replace('sd-concepts-library/', ''))
 models_list.sort()
-print(models_list)
 
 html_struct = """<!DOCTYPE html>
 <html lang="en">
@@ -67,6 +77,7 @@ html_struct = """<!DOCTYPE html>
 </style>
 <div class="container" style="margin-bottom: 180px;">
  <div class="jumbotron text-center" style="margin: 45px;"><h1>Stable Diffusion Texual Inversion Models</h1></div>
+  <p><i>Page updates daily. Last updated {datetime.datetime.now().strftime("%A, %B %d %Y")}.</i></p>
 
 <p>
   Generated from <a href="https://huggingface.co/sd-concepts-library">huggingface.co/sd-concepts-library</a>
@@ -80,9 +91,12 @@ html_struct = """<!DOCTYPE html>
 <br><hr>
 """
 
-# Move the model out
 i = 1
 for model_name in models_list:
+
+    if i == 3:
+        break
+
     print(f'{i}/{len(models_list)} -> {model_name}')
     # if os.path.exists(f'{model_name}/learned_embeds.bin'):  # double check the file exists since sometimes it hasn't been uploaded yet
     #     shutil.move(f'{model_name}/learned_embeds.bin', f'{model_name}/{model_name}.pt')
@@ -118,11 +132,6 @@ for model_name in models_list:
 
 html_struct = html_struct + '</div></body></html>'
 
-f = open('sd-concepts-library.html', 'w')
+f = open(args.out_file, 'w')
 f.write(html_struct)
 f.close()
-
-# markdown = markdownify.markdownify(html_struct, heading_style="ATX")
-# f = open('sd-concepts-library.md', 'w')
-# f.write(markdown)
-# f.close()
