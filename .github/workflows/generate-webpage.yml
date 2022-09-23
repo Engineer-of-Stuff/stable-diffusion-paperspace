@@ -28,5 +28,5 @@ jobs:
         path: ${{ env.DEVOPS_DIR }}
 
     - name: Generate Static Webpage
-      run: ls -l . && python $GITHUB_WORKSPACE/other/generate_tx_models_html.py
+      run: ls -l $GITHUB_WORKSPACE/other && python $GITHUB_WORKSPACE/other/generate_tx_models_html.py
       shell: sh
