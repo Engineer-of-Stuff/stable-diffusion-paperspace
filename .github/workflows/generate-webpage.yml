@@ -23,9 +23,7 @@ jobs:
           huggingface_hub
     - uses: actions/checkout@v3
       with:
-        repository: jcdan3/devops
-        token: ${{ secrets.GITHUB_TOKEN }}
-        path: ${{ env.DEVOPS_DIR }}
+        repository: ${{ github.repository }}
 
     - name: Generate Static Webpage
       run: ls -l ${{ github.workspace }} && python ${{ github.workspace }}/other/generate_tx_models_html.py
