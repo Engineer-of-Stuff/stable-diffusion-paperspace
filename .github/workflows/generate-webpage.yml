@@ -27,8 +27,8 @@ jobs:
           import shutil
           from urllib import request as ulreq
 
-          # import markdownify
           import requests
+          from huggingface_hub import HfApi
           from PIL import ImageFile
 
 
@@ -53,13 +53,17 @@ jobs:
 
 
           # Get list of model directories
-          working_dir = os.getcwd()
-          root_dir_list = []
-          for x in os.listdir(working_dir):
-              if os.path.isdir(x):
-                  root_dir_list.append(x)
+          # working_dir = os.getcwd()
+          # root_dir_list = []
+          # for x in os.listdir(working_dir):
+          #     if os.path.isdir(x):
+          #         root_dir_list.append(x)
 
-          html_struct = f"""<!DOCTYPE html>
+          # Get list of models under the sd-concepts-library organization
+          api = HfApi()
+          root_dir_list = api.list_models(author="sd-concepts-library").sort()
+
+          html_struct = """<!DOCTYPE html>
           <html lang="en">
           <head>
             <title>Stable Diffusion Texual Inversion Models</title>
@@ -92,7 +96,6 @@ jobs:
           </style>
           <div class="container" style="margin-bottom: 180px;">
            <div class="jumbotron text-center" style="margin: 45px;"><h1>Stable Diffusion Texual Inversion Models</h1></div>
-           <center>Compiled {datetime.datetime.now().strftime('%B %d, %Y')}</center>
 
           <p>
             Generated from <a href="https://huggingface.co/sd-concepts-library">huggingface.co/sd-concepts-library</a>
@@ -100,10 +103,6 @@ jobs:
 
           <p>
             Downloaded models are straight from the HuggingFace repositories and are named learned_embeds.bin. Rename to model_name.pt
-          </p>
-
-          <p>
-          The HuggingFace repository is changed regularly so this page might not be current.
           </p>
 
 
@@ -151,3 +150,8 @@ jobs:
           f = open('sd-concepts-library.html', 'w')
           f.write(html_struct)
           f.close()
+
+          # markdown = markdownify.markdownify(html_struct, heading_style="ATX")
+          # f = open('sd-concepts-library.md', 'w')
+          # f.write(markdown)
+          # f.close()
