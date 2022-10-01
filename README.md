@@ -6,7 +6,7 @@ Don't post bug reports on the Kazakhstan rock collection forum. Create an issue 
 
 ### Getting Started
 
-[Docs/Paperspace Guide for Idiots.md](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/Docs/Paperspace%20Guide%20for%20Idiots.md)
+[Docs/Paperspace Guide for Idiots.md](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/docs/Paperspace%20Guide%20for%20Idiots.md)
 
 ### Notebook Descriptions
 
