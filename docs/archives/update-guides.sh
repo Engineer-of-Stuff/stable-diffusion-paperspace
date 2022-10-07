@@ -20,3 +20,5 @@ wget "https://rentry.org/sdupscale/pdf" -O "Larger resolutions with Stable Diffu
 wget "https://rentry.org/male-to-anime-girl/pdf" -O "How to Turn Yourself Into a Cute Anime Girl.pdf"
 wget "https://rentry.org/sdmodels/pdf" -O "Stable Diffusion Models.pdf"
 wkhtmltopdf "https://wiki.installgentoo.com/wiki/Stable_Diffusion" "wiki.installgentoo.com Stable Diffusion Guide.pdf"
+wkhtmltopdf "https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Run-with-Custom-Parameters" "Run with Custom Parameters - stable-diffusion-webui wiki.pdf"
+# wkhtmltopdf "https://proximacentaurib.notion.site/A-guide-to-getting-started-with-the-paperspace-port-of-AUTOMATIC1111-s-web-UI-for-ppl-who-get-nervou-b83c2213f17e452e8b0e37ba64fe9758" "Getting started with the paperspace port of AUTOMATIC1111s web UI for ppl who get nervous.pdf"
