@@ -1,8 +1,6 @@
 # stable-diffusion-paperspace
 
-_Google Colab notebooks ported to standard Jupiter for Paperspace._
-
-Don't post bug reports on the Kazakhstan rock collection forum. Create an issue here.
+_Jupyter notebooks for Paperspace._
 
 ### Getting Started
 
