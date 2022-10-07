@@ -1,3 +1,5 @@
+# https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#saving-steps-of-the-sampling-process
+
 import os.path
 
 import modules.scripts as scripts
