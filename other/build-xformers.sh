@@ -27,7 +27,7 @@ cd /notebooks/xformers
 git submodule update --init --recursive
 
 # Build xformers
-apt install python3.9-venv
+apt install -y python3.9-venv
 python3 -m venv venv_xformers
 source ./venv_xformers/bin/activate
 pip uninstall -y torch  torchvision torchaudio # Remove existing pytorch install.
