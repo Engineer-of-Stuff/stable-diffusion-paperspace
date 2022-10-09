@@ -27,6 +27,9 @@ cd /notebooks/xformers
 git submodule update --init --recursive
 
 # Build xformers
+apt install python3.9-venv
+python3 -m venv venv_xformers
+source ./venv_xformers/bin/activate
 pip uninstall -y torch  torchvision torchaudio # Remove existing pytorch install.
 pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113 # Install pytorch for cuda 11.3
 pip install setuptools==49.6.0 # This was suggested by anon
