@@ -17,6 +17,7 @@ apt purge -y cuda*
 apt autoremove --purge -y
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004-keyring.gpg -O /usr/share/keyrings/cuda-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/cuda-archive-keyring.gpg] https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /" | sudo tee /etc/apt/sources.list.d/cuda-ubuntu2004-x86_64.list
+apt update
 apt install -y cuda-command-line-tools-11-3 cuda-compat-11-3 cuda-minimal-build-11-3 cuda-compiler-11-3 cuda-libraries-dev-11-3 cuda-cupti-dev-11-3 cuda-cupti-11-3 cuda-nvcc-11-3 cuda-cudart-dev-11-3 cuda-libraries-11-3 cuda-cudart-11-3 cuda-gdb-11-3 cuda-cuobjdump-11-3 cuda-cuxxfilt-11-3 cuda-driver-dev-11-3 cuda-memcheck-11-3 cuda-nvdisasm-11-3 cuda-nvml-dev-11-3 cuda-nvprof-11-3 cuda-nvprune-11-3 cuda-nvrtc-dev-11-3 cuda-nvrtc-11-3 cuda-nvtx-11-3 cuda-sanitizer-11-3
 
 # Download xformers source
