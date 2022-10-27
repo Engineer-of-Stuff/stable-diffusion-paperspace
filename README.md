@@ -6,6 +6,10 @@ _Jupyter notebooks for Paperspace._
 
 [Docs/Paperspace Guide for Idiots.md](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/docs/Paperspace%20Guide%20for%20Idiots.md)
 
+### xformers
+
+I've compiled wheels for a bunch of GPUs → https://github.com/Cyberes/xformers-compiled
+
 ### Notebook Descriptions
 
 #### StableDiffusionUI_Voldemort_paperspace.ipynb
