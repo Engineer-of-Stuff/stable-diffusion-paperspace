@@ -5,11 +5,14 @@
 # named "archive". This script renames the root directory to "archive".
 
 if [ -z "$1" ]; then echo -e "Usage:\n./fix-diffusers-root-directory.sh [file or directory of files]" && exit 1; fi
-TARGET_PATH="$@"
+TARGET_PATH="${@%/}"
 
 test_zip () {
-  unzip -l "$1" > /dev/null
-  return $?
+  if file "$1" | grep "Zip archive" > /dev/null 2>&1; then
+    return 0
+  else
+    return 1
+  fi
 }
 
 do_convert () {
