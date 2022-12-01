@@ -20,10 +20,6 @@ AUTOMATIC1111's webUI. Designed to get a newbie set up, features lots of error c
 
 All the commands you need to do create a textual inversion embedding. Does not hold your hand or guide you through the process. Any issues related to this notebook will be closed.
 
-#### lfs/latent-diffusion
-
-Holds stuff for latent-diffusion. Probably not needed but latent-diffusion had them stored on some random file hosting service.
-
 #### /other Directory
 
 Other notebooks and code.
