@@ -14,7 +14,9 @@ Paperspace may get wise to the rathole method but unless they block all external
 
 ### 1. Spin up a server
 
-I've had good experiences with DigitalOcean. Select this machine:
+I've had good experiences with DigitalOcean. You can use my promo code for $200 credit over 60 days: https://m.do.co/c/08ef99974bdd
+
+Select this machine:
 
 <img src="https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/master/docs/assets/create-droplet.png" width=500>
 
@@ -149,7 +151,21 @@ rathole -c /notebooks/rathole/client.toml
 
 
 
-### 9. Access the proxied WebUI
+### 9. Start the WebUI
+
+Start the WebUI with this extra arg:
+
+```
+--port 7860
+```
+
+
+
+If you're using my notebook then set `gradio_port = 7860` in the settings block.
+
+
+
+### 10. Access the proxied WebUI
 
 The WebUI is accessible on your server's port 9001.
 
@@ -157,7 +173,7 @@ The WebUI is accessible on your server's port 9001.
 
 ## Using nginx
 
-You can use nginx to set up domain names for your services. Create a wildcard DNS record and point it to your server.
+You can use nginx to set up domain names for your services and encrypt the traffic. Create a wildcard DNS record and point it to your server.
 
 ```nginx
 # /etc/nginx/sites-enabled/rathole.conf
@@ -257,4 +273,3 @@ location = /rathole-error.html
 
 </html>
 ```
-
