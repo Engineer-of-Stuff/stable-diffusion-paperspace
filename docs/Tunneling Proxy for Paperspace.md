@@ -197,7 +197,7 @@ server
   server_name gradio.t.example.com;
   location /
   {
-    proxy_pass http://127.0.0.1:9002;
+    proxy_pass http://127.0.0.1:9001;
     include /etc/nginx/includes/rathole-proxy.conf;
   }
   include /etc/nginx/includes/rathole-error.conf;
