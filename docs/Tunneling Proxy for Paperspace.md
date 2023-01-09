@@ -4,8 +4,8 @@ Gradio's reverse proxy service sucks. The WebUI program integrates ngrok to fix 
 
 
 
-There is literally no easy solution for this. Personally, what I do is run a [rathole](https://github.com/rapiz1/rathole) server on a $4 DigitalOcean VPS. You've got to host your own server that Paperspace doesn't know  about.
-
+There is literally no easy solution for this and you must to host your own server that Paperspace doesn't know  about.
+ What I do is run a [rathole](https://github.com/rapiz1/rathole) server on a $4 DigitalOcean VPS.
 
 
 Paperspace may get wise to the rathole method but unless they block all external connections and preform deep packet inspection to detect rathole traffic there isn't much they can do.
