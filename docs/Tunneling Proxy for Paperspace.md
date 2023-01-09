@@ -1,6 +1,6 @@
 # Tunneling Proxy for Paperspace
 
-Gradio's reverse proxy service sucks. The WebUI program integrates ngrok to fix this issue which works well but Paperspace locks your account for using any tunneling proxy service such as ngrok (who knows how many they  explicitly ban).
+Gradio's reverse proxy service sucks. The WebUI program integrates ngrok to fix this issue which works well but Paperspace locks your account for using any tunneling proxy service such as (who knows how many they  explicitly ban).
 
 
 
