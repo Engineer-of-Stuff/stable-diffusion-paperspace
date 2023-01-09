@@ -273,3 +273,13 @@ location = /rathole-error.html
 
 </html>
 ```
+
+
+
+To get a wildcard Certbot SSL cert, use this command.
+
+```bash
+sudo certbot --manual --preferred-challenges=dns --no-redirect --installer nginx -d t.example.com -d *.t.example.com
+```
+
+Certbot will tell you to create some `txt` DNS records.
