@@ -4,29 +4,20 @@ _Jupyter notebooks for Paperspace._
 
 ### Getting Started
 
-[Docs/Paperspace Guide for Idiots.md](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/docs/Paperspace%20Guide%20for%20Idiots.md)
+Download the notebook: [StableDiffusionUI_Voldemort_paperspace.ipynb](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/master/StableDiffusionUI_Voldemort_paperspace.ipynb)
+
+It's designed to automate pretty much the entire process of gettint your WebUI set up.
+
+Guide: [Docs/Paperspace Guide for Idiots.md](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/docs/Paperspace%20Guide%20for%20Idiots.md)
 
 ### xformers
 
 I've compiled wheels for a bunch of GPUs → https://github.com/Cyberes/xformers-compiled
 
-### Notebook Descriptions
+### /other Directory
 
-#### StableDiffusionUI_Voldemort_paperspace.ipynb
+Other notebooks and old code.
 
-AUTOMATIC1111's webUI. Designed to get a newbie set up, features lots of error checking and automation.
+### Linux
 
-#### Cyberes_Textual_Inversion_Training.ipynb
-
-All the commands you need to do create a textual inversion embedding. Does not hold your hand or guide you through the process. Any issues related to this notebook will be closed.
-
-#### /other Directory
-
-Other notebooks and code.
-
--   CodeFormer_Inference_Simplified.ipynb
--   stable_diffusion_webui_hlky_paperspace_09-07-2022.ipynb
--   sd-concepts-library_Exporter.ipynb
--   Huggingface Textual Inversion Training.ipynb
--   download_sd-concepts-library.py
--   Misc. old stuff
+See [stable-diffusion-webui-linux](https://github.com/Cyberes/stable-diffusion-webui-linux).
