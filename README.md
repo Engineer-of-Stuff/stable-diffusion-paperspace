@@ -6,7 +6,7 @@ _Jupyter notebooks for Paperspace._
 
 Download the notebook: [StableDiffusionUI_Voldemort_paperspace.ipynb](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/master/StableDiffusionUI_Voldemort_paperspace.ipynb)
 
-It's designed to automate pretty much the entire process of gettint your WebUI set up.
+It's designed to automate pretty much the entire process of getting your WebUI set up.
 
 Guide: [docs/Paperspace Guide for Idiots.md](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/docs/Paperspace%20Guide%20for%20Idiots.md)
 
