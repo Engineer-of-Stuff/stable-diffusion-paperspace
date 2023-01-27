@@ -39,7 +39,7 @@ Running it in the cloud is much easier and you're less likely to mess up your OS
 
 
 
-1. [Create an Account](https://console.paperspace.com/signup) You will be asked for your phone number. **You can use a VOIP number such as Google Voice, they don't block it!**
+1. [Create an Account](https://console.paperspace.com/signup) You will be asked for your phone number.
 
 2. Click this button and fill out the form that pops up
 
