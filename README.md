@@ -15,6 +15,12 @@ This notebook is designed to automate pretty much the entire process of getting 
 
 Guide: [docs/Paperspace Guide for Idiots.md](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/docs/Paperspace%20Guide%20for%20Idiots.md)
 
+<br>
+
+Did I break something with a new update? You can download an old version of this notebook here: https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/commits/master
+
+<br>
+
 ### xformers
 
 I've compiled wheels for a bunch of GPUs → https://github.com/Cyberes/xformers-compiled
