@@ -31,7 +31,6 @@ Other notebooks and old code.
 
 ### /docs Directory
 - [docs/Paperspace Guide for Idiots.md](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/docs/Paperspace%20Guide%20for%20Idiots.md): how to install the notebook on Paperspace.
-- [docs/Tunneling Proxy for Paperspace.md](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/master/docs/Tunneling%20Proxy%20for%20Paperspace.md): what to do when Gradio sh*ts the bed.
 
 ### Linux
 
