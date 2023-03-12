@@ -21,6 +21,15 @@ Did I break something with a new update? You can download an old version of this
 
 <br>
 
+### A note about Python 3.10
+
+Python 3.10 is the recommended Python version for running the WebUI. If you encounter any issues, maybe running the WebUI in Python 3.10 will help? Paperspace uses Python 3.9 so you must run a custom container.
+
+If you have already created a machine, delete it and create a new one following these instructions: https://docs.paperspace.com/gradient/notebooks/runtimes/#how-to-specify-a-custom-container
+
+Make sure to use this container image: `cyberes/gradient-base-py3.10:latest`
+
+
 ### xformers
 
 I've compiled wheels for a bunch of GPUs → https://github.com/Cyberes/xformers-compiled
