@@ -56,6 +56,12 @@ Running it in the cloud is much easier and you're less likely to mess up your OS
 5. Download [StableDiffusionUI_Voldemort_paperspace.ipynb](https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/StableDiffusionUI_Voldemort_paperspace.ipynb)
 Make sure you click the "Raw" button near the top right and do `ctrl+s` on the page with the raw text. Don't download the webpage.
 
+You can also open a terminal in the notebook and run this command to download the notebook to the machine. Then skip step 6.
+
+```
+wget https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/master/StableDiffusionUI_Voldemort_paperspace.ipynb
+```
+
 6. Upload that file to your notebook
 
 You don't have to clone/download the entire repository, just the `.ipynb` file.
@@ -76,6 +82,15 @@ Click this symbol in the left vertical menubar.
 ![open-jupiter](https://raw.githubusercontent.com/Engineer-of-Stuff/stable-diffusion-paperspace/main/docs/assets/open-jupiter.png)
 
 You can access the terminal in the Jupyter Notebook.
+
+
+## A note about Python 3.10
+
+Python 3.10 is the recommended Python version for running the WebUI. If you encounter any issues, maybe running the WebUI in Python 3.10 will help? Paperspace uses Python 3.9 so you must run a custom container.
+
+If you have already created a machine, delete it and create a new one following these instructions: https://docs.paperspace.com/gradient/notebooks/runtimes/#how-to-specify-a-custom-container
+
+Make sure to use this container image: `cyberes/gradient-base-py3.10:latest`
 
 ## I need more help :(
 
